@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tuki · Recomendador de platos</title>
+  <style>
+    :root {
+      --cream: #fdfbf7;
+      --card: #ffffff;
+      --oat: #f5eee6;
+      --line: #e7dad3;
+      --espresso: #2b2421;
+      --pebble: #786e68;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fdeee7;
+      --sage: #2f5d36;
+      --sage-soft: #edf4ee;
+      --honey: #92400e;
+      --honey-soft: #fef6e7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--espresso);
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .app {
+      width: min(920px, 100%);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .intro { padding: 12px 4px; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 18px;
+    }
+    .brand span {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 18px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.05;
+      margin: 28px 0 12px;
+      letter-spacing: -0.03em;
+    }
+    .lead { color: var(--pebble); line-height: 1.6; max-width: 36ch; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .chip {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--espresso);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .chip:hover { border-color: var(--terracotta); color: var(--terracotta); }
+    .chat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 18px 50px -20px rgba(135, 78, 56, 0.25);
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .avatar {
+      width: 38px; height: 38px; border-radius: 14px;
+      background: var(--terracotta); color: #fff;
+      display: grid; place-items: center; font-size: 18px;
+    }
+    .chat-header strong { display: block; font-size: 14px; }
+    .chat-header small { color: var(--pebble); font-size: 11px; }
+    .messages {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+      overflow-y: auto;
+      max-height: 520px;
+    }
+    .bubble {
+      max-width: 92%;
+      padding: 12px 15px;
+      border-radius: 20px;
+      font-size: 13px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+    .bubble.user {
+      align-self: flex-end;
+      background: var(--terracotta);
+      color: #fff;
+      border-bottom-right-radius: 6px;
+    }
+    .bubble.bot {
+      align-self: flex-start;
+      background: var(--oat);
+      border-bottom-left-radius: 6px;
+    }
+    .bubble.error { background: #fee2e2; color: #991b1b; }
+    .sources { display: grid; gap: 8px; margin-top: 2px; }
+    .source {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 10px 12px;
+      background: #fff;
+      font-size: 12px;
+    }
+    .source-top { display: flex; justify-content: space-between; gap: 8px; }
+    .source b { font-size: 13px; }
+    .price { color: var(--terracotta); font-weight: 800; white-space: nowrap; }
+    .muted { color: var(--pebble); font-size: 11px; margin-top: 2px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+    .tag { border-radius: 999px; padding: 2px 7px; font-size: 10px; font-weight: 700; }
+    .tag.veg { background: var(--sage-soft); color: var(--sage); }
+    .tag.hot { background: var(--terracotta-soft); color: var(--terracotta); }
+    .tag.alg { background: var(--honey-soft); color: var(--honey); }
+    .meta { color: var(--pebble); font-size: 10px; margin-top: 5px; }
+    form {
+      display: flex;
+      gap: 8px;
+      padding: 14px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+    input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 11px 15px;
+      font: inherit;
+      font-size: 13px;
+      outline: none;
+      background: var(--cream);
+    }
+    input:focus { border-color: var(--terracotta); }
+    button.send {
+      width: 42px; height: 42px; border: 0; border-radius: 50%;
+      background: var(--terracotta); color: #fff; font-size: 16px;
+      cursor: pointer;
+    }
+    button.send:disabled { opacity: 0.45; cursor: not-allowed; }
+    .loading { color: var(--pebble); font-size: 12px; padding: 0 18px 12px; }
+    @media (max-width: 760px) {
+      body { display: block; padding: 16px; }
+      .app { grid-template-columns: 1fr; }
+      .intro { padding: 4px; }
+      .chat { min-height: 520px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <section class="intro">
+      <div class="brand"><span>🍳</span> TukiTuki</div>
+      <h1>¿Qué se te antoja hoy?</h1>
+      <p class="lead">
+        Pregúntale a Tuki por un plato. Busca en el catálogo real de restaurantes
+        y te muestra el precio, el local y los alérgenos.
+      </p>
+      <div class="chips" id="chips">
+        <button class="chip" type="button">¿Qué me recomiendas?</button>
+        <button class="chip" type="button">Algo vegetariano y barato</button>
+        <button class="chip" type="button">Quiero un postre</button>
+        <button class="chip" type="button">¿Qué hay en Popayán?</button>
+      </div>
+    </section>
+
+    <section class="chat" aria-label="Chat de recomendaciones">
+      <header class="chat-header">
+        <div class="avatar">🍽️</div>
+        <div>
+          <strong>Tuki, tu recomendador</strong>
+          <small>Catálogo real · modelo local</small>
+        </div>
+      </header>
+      <div class="messages" id="messages" aria-live="polite">
+        <div class="bubble bot">Hola, soy Tuki. Dime qué se te antoja y busco platos reales del catálogo. Puedes pedirme algo vegetariano, picante, económico o para compartir.</div>
+      </div>
+      <div class="loading" id="loading" hidden>Buscando en el catálogo…</div>
+      <form id="form">
+        <input id="input" maxlength="500" placeholder="Ej. algo vegetariano para almorzar" autocomplete="off" />
+        <button class="send" id="send" type="submit" aria-label="Enviar" disabled>➤</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const messages = document.getElementById("messages");
+    const form = document.getElementById("form");
+    const input = document.getElementById("input");
+    const send = document.getElementById("send");
+    const loading = document.getElementById("loading");
+    const chips = document.getElementById("chips");
+    const historial = [];
+
+    const money = (value) => {
+      if (value === null || value === undefined) return "";
+      try {
+        return new Intl.NumberFormat("es-CO", {
+          style: "currency",
+          currency: "COP",
+          maximumFractionDigits: 0,
+        }).format(value);
+      } catch {
+        return "$" + value;
+      }
+    };
+
+    const addBubble = (text, role, extra = {}) => {
+      const bubble = document.createElement("div");
+      bubble.className = "bubble " + role + (extra.error ? " error" : "");
+      bubble.textContent = text;
+      messages.appendChild(bubble);
+      if (extra.sources?.length) {
+        const wrap = document.createElement("div");
+        wrap.className = "sources";
+        for (const fuente of extra.sources) {
+          const card = document.createElement("div");
+          card.className = "source";
+          const top = document.createElement("div");
+          top.className = "source-top";
+          const name = document.createElement("b");
+          name.textContent = fuente.nombre;
+          const price = document.createElement("span");
+          price.className = "price";
+          price.textContent = money(fuente.precio);
+          top.append(name, price);
+          card.appendChild(top);
+          const place = document.createElement("div");
+          place.className = "muted";
+          place.textContent = [fuente.restaurante, fuente.ciudad].filter(Boolean).join(" · ");
+          card.appendChild(place);
+          const tags = document.createElement("div");
+          tags.className = "tags";
+          if (fuente.vegetariano) tags.appendChild(tag("Vegetariano", "veg"));
+          if (fuente.vegano) tags.appendChild(tag("Vegano", "veg"));
+          if (fuente.picante) tags.appendChild(tag("Picante", "hot"));
+          if (fuente.alergenos?.length) {
+            tags.appendChild(tag("Contiene: " + fuente.alergenos.join(", "), "alg"));
+          }
+          if (tags.children.length) card.appendChild(tags);
+          if (extra.latency) {
+            const meta = document.createElement("div");
+            meta.className = "meta";
+            meta.textContent = `${extra.model || "tuki-chef"} · ${(extra.latency / 1000).toFixed(1)} s`;
+            card.appendChild(meta);
+          }
+          wrap.appendChild(card);
+        }
+        messages.appendChild(wrap);
+      }
+      messages.scrollTop = messages.scrollHeight;
+    };
+
+    const tag = (text, kind) => {
+      const span = document.createElement("span");
+      span.className = "tag " + kind;
+      span.textContent = text;
+      return span;
+    };
+
+    const updateSend = () => {
+      send.disabled = !input.value.trim() || loading.hidden === false;
+    };
+
+    const enviar = async (texto) => {
+      const limpio = texto.trim();
+      if (!limpio || !loading.hidden) return;
+      addBubble(limpio, "user");
+      input.value = "";
+      updateSend();
+      loading.hidden = false;
+      try {
+        const response = await fetch("/api/v1/ai/recomendar", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            mensaje: limpio,
+            historial: historial.slice(-6),
+          }),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data?.detail?.message || "No se pudo consultar el chatbot.");
+        }
+        addBubble(data.respuesta, "bot", {
+          sources: data.fuentes,
+          latency: data.latency_ms,
+          model: data.modelo,
+        });
+        historial.push({ rol: "user", contenido: limpio });
+        historial.push({ rol: "assistant", contenido: data.respuesta });
+      } catch (error) {
+        addBubble(error.message || "Ocurrió un error.", "bot", { error: true });
+      } finally {
+        loading.hidden = true;
+        updateSend();
+        input.focus();
+      }
+    };
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      void enviar(input.value);
+    });
+    input.addEventListener("input", updateSend);
+    chips.addEventListener("click", (event) => {
+      const chip = event.target.closest(".chip");
+      if (chip) void enviar(chip.textContent);
+    });
+  </script>
+</body>
+</html>
