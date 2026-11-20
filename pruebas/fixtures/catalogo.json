@@ -1,0 +1,64 @@
+[
+  {
+    "restaurante": {
+      "id": "r1",
+      "nombre": "Café Bolívar",
+      "slug": "cafe-bolivar",
+      "ciudad": "Popayán",
+      "descripcion": "Café de especialidad y repostería en el centro.",
+      "eslogan": "El mejor café de la ciudad",
+      "direccion": "Calle 4 # 5-18",
+      "horarioApertura": "11:00",
+      "horarioCierre": "20:00",
+      "telefono": "3001234567"
+    },
+    "cocinas": [{ "nombre": "Cafetería" }],
+    "categorias": [
+      { "id": "c1", "nombre": "Cafés" },
+      { "id": "c2", "nombre": "Postres" }
+    ],
+    "resumen_resenas": { "promedio": 4.7, "cantidad": 12 },
+    "platillos": [
+      {
+        "id": "p1",
+        "nombre": "Arepa de queso",
+        "descripcion": "Arepa de maíz con queso campesino.",
+        "precio": "12000",
+        "categoriaId": "c1",
+        "vegetariano": true,
+        "vegano": false,
+        "picante": false,
+        "ingredientes": ["maíz", "queso"],
+        "alergenos": ["lácteos"],
+        "destacado": true,
+        "tiempoPreparacion": 10
+      },
+      {
+        "id": "p2",
+        "nombre": "Bandeja paisa",
+        "descripcion": "Frijoles, arroz, chicharrón y huevo.",
+        "precio": "28000",
+        "categoriaId": "c1",
+        "vegetariano": false,
+        "vegano": false,
+        "picante": false,
+        "ingredientes": ["frijol", "arroz", "cerdo"],
+        "alergenos": ["huevo"],
+        "destacado": false
+      },
+      {
+        "id": "p3",
+        "nombre": "Torta de chocolate",
+        "descripcion": "Chocolate 70 % con cobertura de cacao.",
+        "precio": "9500",
+        "categoriaId": "c2",
+        "vegetariano": true,
+        "vegano": false,
+        "picante": false,
+        "ingredientes": ["harina", "chocolate", "huevo"],
+        "alergenos": ["gluten", "huevo", "lácteos"],
+        "destacado": false
+      }
+    ]
+  }
+]
