@@ -108,6 +108,7 @@
       flex: 1;
       overflow-y: auto;
       max-height: 520px;
+      scroll-behavior: smooth;
     }
     .bubble {
       max-width: 92%;
@@ -164,8 +165,12 @@
       font-size: 13px;
       outline: none;
       background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    input:focus { border-color: var(--terracotta); }
+    input:focus {
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 3px var(--terracotta-soft);
+    }
     button.send {
       width: 42px; height: 42px; border: 0; border-radius: 50%;
       background: var(--terracotta); color: #fff; font-size: 16px;
