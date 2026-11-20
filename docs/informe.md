@@ -84,6 +84,12 @@ Cada plato es un documento atómico. Así el precio y los alérgenos nunca queda
 separados de su descripción. Los restaurantes son otro documento. Las
 descripciones largas se parten en fragmentos.
 
+Los documentos usados están versionados en el repositorio:
+
+- `datos/catalogo.json`: catálogo exportado que consume la API.
+- `conocimiento/catalogo.md`: versión legible de los 61 platos y 7 restaurantes.
+- `conocimiento/README.md`: explicación del corte, el solapamiento y la indexación.
+
 ### Estrategia de corte
 
 - **220 tokens** por fragmento.
@@ -232,7 +238,7 @@ también fija Node 22 en su configuración.
 
 ## Pruebas unitarias y de integración
 
-El gateway quedó con **14 pruebas** que no necesitan PostgreSQL ni Ollama real:
+El gateway quedó con **17 pruebas** que no necesitan PostgreSQL ni Ollama real:
 dobles de prueba, `respx` y un índice en memoria. Cubren:
 
 - Chunking y solapamiento.
@@ -243,7 +249,7 @@ dobles de prueba, `respx` y un índice en memoria. Cubren:
 - Errores del proveedor y respuestas de la API.
 - Alérgenos y respuestas factuales.
 
-Resultado: **14/14 pruebas correctas**.
+Resultado: **17/17 pruebas correctas**.
 
 ## Golden Dataset
 
@@ -271,9 +277,9 @@ La última ejecución completa dio:
 | Éxitos | 52 |
 | Tasa de éxito | **100 %** |
 | Tasa de error | 0 % |
-| Latencia media | 1.701 ms |
-| Latencia p50 | 62 ms |
-| Latencia p95 | 9.113 ms |
+| Latencia media | 8.237 ms |
+| Latencia p50 | 151 ms |
+| Latencia p95 | 38.424 ms |
 | Umbral exigido | 70 % |
 
 ![Resumen de la evaluación del Golden Dataset](capturas/evaluacion.jpeg){width=6.2in}

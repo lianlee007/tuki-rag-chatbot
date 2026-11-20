@@ -68,6 +68,12 @@ completo, el gateway consulta `restaurantes-service` por HTTP; aquí se usa
 - **Corte: 220 tokens. Solapamiento: 40 tokens (18 %).**
 - Los platos y las fichas cortas no se parten.
 
+Los documentos que alimentan el índice son:
+
+- `datos/catalogo.json`: catálogo exportado que lee la API.
+- `conocimiento/catalogo.md`: versión legible de cada plato y restaurante.
+- `conocimiento/README.md`: explicación del corte y del solapamiento.
+
 La lista completa está en [`conocimiento/catalogo.md`](conocimiento/catalogo.md)
 y la explicación en [`conocimiento/README.md`](conocimiento/README.md).
 
@@ -178,4 +184,14 @@ El documento de la actividad está en:
 
 - `docs/Informe-modelo-rag-TukiTuki.pdf`
 - `docs/Informe-modelo-rag-TukiTuki.docx`
+
+## Aportes del equipo
+
+| Integrante | Aporte |
+|---|---|
+| Julián (lianlee007) | Estrategia RAG, índice híbrido, gateway, interfaz, pruebas, evaluación y documentación |
+| Elkin Yandún | Reorganización del repositorio, ampliación de las métricas de evaluación y catálogo de pruebas |
+
+Todos los integrantes participaron en el diseño, las pruebas y la revisión del
+informe.
 
