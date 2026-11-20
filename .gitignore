@@ -6,3 +6,9 @@ __pycache__/
 .env
 .venv-webui/
 runs/
+.coverage
+htmlcov/
+.mypy_cache/
+.pyright/
+.DS_Store
+Thumbs.db

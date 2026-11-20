@@ -1,6 +1,6 @@
 # Modelo personalizado de Tuki para el chatbot RAG.
 #
-#   ollama create tuki-chef -f services/ai-gateway/Modelfile
+#   ollama create tuki-chef -f Modelfile
 #
 # El gateway vuelve a enviar este mismo prompt system en cada llamada; el
 # Modelfile lo deja grabado en el modelo para que también funcione si se prueba
