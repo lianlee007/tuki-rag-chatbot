@@ -167,12 +167,3 @@ El documento de la actividad está en:
 - `docs/Informe-modelo-rag-TukiTuki.pdf`
 - `docs/Informe-modelo-rag-TukiTuki.docx`
 
-## Aportes del equipo
-
-| Integrante | Aporte |
-|---|---|
-| lianlee007 | Estrategia RAG, gateway, catálogo, pruebas, evaluación e interfaz |
-| _(completar)_ | _(completar)_ |
-
-> Completar esta tabla con los nombres y aportes de cada integrante antes de
-> enviar el correo al docente.

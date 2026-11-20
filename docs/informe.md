@@ -330,15 +330,6 @@ Todas las categorías del Golden Dataset quedaron al 100 %.
   servicio dueño) para soportar varias réplicas.
 - Ampliar el Golden Dataset a 100 casos y incluir preguntas de varias ciudades.
 
-# Aportes del equipo
-
-| Integrante | Aporte |
-|---|---|
-| Equipo TukiTuki | Diseño de la estrategia RAG, gateway, índice híbrido, interfaz, pruebas y evaluación |
-
-> Completar esta tabla con los nombres y aportes de cada integrante antes de
-> entregar el informe al docente.
-
 # Referencias
 
 - Documento de la actividad “Servicio de IA generativo para proyecto”.
