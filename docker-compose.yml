@@ -1,0 +1,59 @@
+name: tuki-rag-chatbot
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: tuki-rag-ollama
+    environment:
+      OLLAMA_KEEP_ALIVE: 15m
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_MAX_LOADED_MODELS: "2"
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+
+  modelos:
+    image: ollama/ollama:latest
+    container_name: tuki-rag-modelos
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    volumes:
+      - ./Modelfile:/Modelfile:ro
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      ollama pull qwen2.5:1.5b-instruct &&
+      ollama pull nomic-embed-text &&
+      ollama create tuki-chef -f /Modelfile
+    restart: "no"
+
+  rag-api:
+    build: .
+    container_name: tuki-rag-api
+    depends_on:
+      ollama:
+        condition: service_healthy
+      modelos:
+        condition: service_completed_successfully
+    environment:
+      OLLAMA_URL: http://ollama:11434
+      CATALOGO_PATH: /app/datos/catalogo.json
+      OLLAMA_MODELO_CHAT: tuki-chef
+      OLLAMA_MODELO_EMBEDDINGS: nomic-embed-text
+      OLLAMA_KEEP_ALIVE: 15m
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
