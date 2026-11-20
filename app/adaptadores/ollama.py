@@ -54,7 +54,7 @@ class OllamaClient:
         max_tokens = min(max_tokens, self._settings.max_output_tokens)
         started = time.perf_counter()
         deadline = started + self._settings.ollama_total_timeout_seconds
-        ultimo_error = "La IA local no está disponible en este momento."
+        ultimo_error = "El servicio de IA no está disponible en este momento."
         agoto_tiempo = False
         modelo = self._settings.modelo_chat
 
@@ -64,7 +64,7 @@ class OllamaClient:
             restante = deadline - time.monotonic()
             if restante <= 0.5:
                 agoto_tiempo = True
-                ultimo_error = "La IA local tardó demasiado en responder."
+                ultimo_error = "El asistente tardó demasiado en responder."
                 break
             try:
                 respuesta = await self._client.post(
@@ -115,7 +115,7 @@ class OllamaClient:
                 )
                 if resultado is not None:
                     return resultado
-                ultimo_error = "La IA local no devolvió contenido."
+                ultimo_error = "El asistente no devolvió contenido."
                 break
 
             detalle = _mensaje_error(respuesta)
@@ -151,7 +151,7 @@ class OllamaClient:
                 )
             if respuesta.status_code == 429 or respuesta.status_code >= 500:
                 ultimo_error = (
-                    "La IA local está ocupada. Espera unos segundos."
+                    "El asistente está ocupado. Espera unos segundos."
                     if respuesta.status_code == 429
                     else "El servidor local de IA falló temporalmente."
                 )
@@ -160,7 +160,7 @@ class OllamaClient:
                     continue
                 break
 
-            ultimo_error = "La solicitud a la IA local no es válida."
+            ultimo_error = "La solicitud al asistente no es válida."
             break
 
         logger.error(
