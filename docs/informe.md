@@ -232,7 +232,7 @@ también fija Node 22 en su configuración.
 
 ## Pruebas unitarias y de integración
 
-El gateway quedó con **13 pruebas** que no necesitan PostgreSQL ni Ollama real:
+El gateway quedó con **14 pruebas** que no necesitan PostgreSQL ni Ollama real:
 dobles de prueba, `respx` y un índice en memoria. Cubren:
 
 - Chunking y solapamiento.
@@ -243,7 +243,7 @@ dobles de prueba, `respx` y un índice en memoria. Cubren:
 - Errores del proveedor y respuestas de la API.
 - Alérgenos y respuestas factuales.
 
-Resultado: **13/13 pruebas correctas**.
+Resultado: **14/14 pruebas correctas**.
 
 ## Golden Dataset
 
