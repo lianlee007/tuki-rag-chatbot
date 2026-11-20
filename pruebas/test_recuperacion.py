@@ -111,6 +111,11 @@ def test_extraer_filtros_de_lenguaje_natural():
     assert filtros.precio_max == 25000
 
 
+def test_reconoce_bebidas_y_postres():
+    assert extraer_filtros("Quiero algo para beber").categorias
+    assert extraer_filtros("Algo dulce de postre").categorias
+
+
 def test_coseno_y_contexto():
     assert coseno([1, 0], [1, 0]) == 1.0
     assert coseno([1, 0], [0, 1]) == 0.0

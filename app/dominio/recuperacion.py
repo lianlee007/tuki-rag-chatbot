@@ -108,7 +108,7 @@ def extraer_filtros(texto: str) -> Filtros:
         categorias = ("Postres", "Repostería")
     elif any(
         palabra in normalizado
-        for palabra in ("tomar", "bebida", "jugo", "limonada", "cafe")
+        for palabra in ("tomar", "beber", "bebida", "jugo", "limonada", "cafe")
     ):
         categorias = ("Café", "Bebidas", "Jugos", "Postres")
 
