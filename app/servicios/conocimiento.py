@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import logging
 import time
 from datetime import UTC, datetime
@@ -39,6 +40,8 @@ class ServicioConocimiento:
         self._actualizado: float = 0.0
         self._error: str | None = None
         self._error_embeddings: str | None = None
+        self._firma: str | None = None
+        self._vectores: list[list[float]] = []
 
     async def obtener(self) -> IndiceRAG:
         if self._indice is not None and not self._esta_vencido():
@@ -73,18 +76,24 @@ class ServicioConocimiento:
                 status_code=503,
                 code="knowledge_empty",
             )
-        vectores: list[list[float]] = []
+        firma = self._firma_documentos(documentos)
+        reutilizados = firma == self._firma and len(self._vectores) == len(documentos)
+        vectores = self._vectores if reutilizados else []
         self._error_embeddings = None
-        try:
-            vectores = await self._embeddings.embed(
-                [documento.texto for documento in documentos]
-            )
-        except Exception as exc:  # noqa: BLE001
-            self._error_embeddings = str(exc)[:300]
-            logger.warning(
-                "embeddings_no_disponibles",
-                extra={"event": "embeddings_error", "error": self._error_embeddings},
-            )
+        if not reutilizados:
+            try:
+                vectores = await self._embeddings.embed(
+                    [documento.texto for documento in documentos]
+                )
+                if vectores:
+                    self._firma = firma
+                    self._vectores = vectores
+            except Exception as exc:  # noqa: BLE001
+                self._error_embeddings = str(exc)[:300]
+                logger.warning(
+                    "embeddings_no_disponibles",
+                    extra={"event": "embeddings_error", "error": self._error_embeddings},
+                )
 
         self._indice = IndiceRAG(documentos, vectores)
         self._actualizado = time.time()
@@ -95,8 +104,19 @@ class ServicioConocimiento:
                 "event": "knowledge_refresh",
                 "documentos": len(documentos),
                 "embeddings": len(vectores),
+                "embeddings_reutilizados": reutilizados,
             },
         )
+
+    @staticmethod
+    def _firma_documentos(documentos: list[Documento]) -> str:
+        hasher = hashlib.sha256()
+        for documento in documentos:
+            hasher.update(documento.id.encode("utf-8"))
+            hasher.update(b"\x00")
+            hasher.update(documento.texto.encode("utf-8"))
+            hasher.update(b"\x1f")
+        return hasher.hexdigest()
 
     def _esta_vencido(self) -> bool:
         return (time.time() - self._actualizado) > self._settings.conocimiento_ttl_seconds
