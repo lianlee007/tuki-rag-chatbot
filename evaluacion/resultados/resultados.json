@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-11-20T02:56:57.863349+00:00",
+  "generado_en": "2026-11-20T15:56:42.743122+00:00",
   "modelo_juez": null,
   "metricas": {
     "total": 52,
@@ -7,9 +7,18 @@
     "fallos": 0,
     "tasa_exito": 100.0,
     "tasa_error": 0.0,
-    "latencia_media_ms": 1701,
-    "latencia_p50_ms": 62,
-    "latencia_p95_ms": 9113,
+    "palabras_clave_casos": 34,
+    "palabras_clave_ok": 34,
+    "tasa_palabras_clave": 100.0,
+    "fuentes_requeridas_casos": 39,
+    "fuentes_requeridas_ok": 39,
+    "tasa_fuentes_requeridas": 100.0,
+    "abstenciones_requeridas": 13,
+    "abstenciones_ok": 13,
+    "tasa_abstenciones": 100.0,
+    "latencia_media_ms": 8237,
+    "latencia_p50_ms": 151,
+    "latencia_p95_ms": 38424,
     "juez_promedio": null,
     "juez_casos": 0
   },
@@ -22,8 +31,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 19,
-      "recuperacion_ms": 6,
+      "latencia_ms": 23,
+      "recuperacion_ms": 5,
       "fuentes": [
         {
           "id": "c18b9564-01c0-4f16-bd1f-8fc25a8d817b",
@@ -47,7 +56,14 @@
       ],
       "respuesta": "Pizza margarita cuesta 28.000 COP. Es del restaurante Pizzería Centenario. ¿Quieres que busque otra opción?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "28.000",
+        "pizza margarita"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g02",
@@ -57,8 +73,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 6,
-      "recuperacion_ms": 4,
+      "latencia_ms": 10,
+      "recuperacion_ms": 6,
       "fuentes": [
         {
           "id": "2fa06ab7-e066-4333-80b0-d332399ea52c",
@@ -81,7 +97,14 @@
       ],
       "respuesta": "Capuchino se prepara así: Espresso doble con leche vaporizada y espuma densa. Es del restaurante Café Bolívar. ¿Quieres que busque otra opción?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "capuchino",
+        "leche"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g03",
@@ -91,8 +114,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 6,
-      "recuperacion_ms": 4,
+      "latencia_ms": 8,
+      "recuperacion_ms": 5,
       "fuentes": [
         {
           "id": "4440657b-ebde-47f7-b24f-4e331a4c51e4",
@@ -117,7 +140,14 @@
       ],
       "respuesta": "Sí, Torta de chocolate es una opción vegetariana. Es del restaurante Café Bolívar. ¿Quieres que busque otra opción?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "torta",
+        "vegetariana"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g04",
@@ -128,7 +158,7 @@
       "fuentes_ok": true,
       "abstencion_ok": true,
       "latencia_ms": 8,
-      "recuperacion_ms": 6,
+      "recuperacion_ms": 5,
       "fuentes": [
         {
           "id": "a7484258-c375-4b56-9120-4c63917213db",
@@ -149,7 +179,14 @@
       ],
       "respuesta": "Sí, Patacones es una opción vegana. Es del restaurante Asadero Los Arcos. ¿Quieres que busque otra opción?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "patacones",
+        "vegana"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g05",
@@ -159,8 +196,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 355,
-      "recuperacion_ms": 353,
+      "latencia_ms": 224,
+      "recuperacion_ms": 219,
       "fuentes": [
         {
           "id": "493abb34-b064-4632-8a72-7c950d6b9914",
@@ -199,7 +236,15 @@
       ],
       "respuesta": "Estas opciones: Café de la finca de Café Bolívar por 5.500 COP [P1]. Capuchino de Café Bolívar por 7.500 COP [P2]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Capuchino: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "capuchino",
+        "torta",
+        "cafe"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g06",
@@ -209,8 +254,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 9113,
-      "recuperacion_ms": 75,
+      "latencia_ms": 25528,
+      "recuperacion_ms": 210,
       "fuentes": [
         {
           "id": "c18b9564-01c0-4f16-bd1f-8fc25a8d817b",
@@ -324,9 +369,15 @@
           ]
         }
       ],
-      "respuesta": "TukiTuki, aquí tienes las opciones para la Pizzería Centenario: - Pizza margarita [P1] - 28000 COP: Tomate, mozzarella fresca y albahaca. - Espagueti con albóndiga [P2] - 28000 COP: Albóndigas de res en salsa de tomate sobre espagueti. - Ensalada césar [P3] - 18000 COP: Lechuga romana, pollo a la plancha, parmesano y aderezo césar. ¿Te apetece algo más?\n\nAlérgenos declarados en el catálogo: Pizza margarita: gluten, lactosa; Espagueti con albóndiga: gluten; Lasagna boloñesa: gluten, lactosa; Pastas carbonara: gluten, huevo, lactosa; Lasagna de la casa: gluten, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "TukiTuki, te recomiendo: [P1] Pizza margarita de Pizzería Centenario por 28000 COP; es una buena opción vegetariana. [P2] Espagueti con albóndiga también está disponible en la pizzería. [Tu turno! ¿Qué tipo de plato prefieres?..]\n\nAlérgenos declarados en el catálogo: Pizza margarita: gluten, lactosa; Espagueti con albóndiga: gluten; Lasagna boloñesa: gluten, lactosa; Pastas carbonara: gluten, huevo, lactosa; Lasagna de la casa: gluten, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "pizza"
+      ],
+      "palabras_clave_requeridas": 1,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g07",
@@ -336,8 +387,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 4,
-      "recuperacion_ms": 3,
+      "latencia_ms": 12,
+      "recuperacion_ms": 7,
       "fuentes": [
         {
           "id": "34cecc78-bdc3-447e-b082-03d3b715d9b5",
@@ -358,7 +409,14 @@
       ],
       "respuesta": "Café Bolívar está en Calle 4 # 5-18, frente al Parque Caldas, Popayán. ¿Quieres que te recomiende algo de su menú?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "calle 4",
+        "parque caldas"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g08",
@@ -368,8 +426,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 4,
-      "recuperacion_ms": 3,
+      "latencia_ms": 11,
+      "recuperacion_ms": 7,
       "fuentes": [
         {
           "id": "34cecc78-bdc3-447e-b082-03d3b715d9b5",
@@ -390,7 +448,14 @@
       ],
       "respuesta": "Su horario es de 11:00 a 20:00. ¿Quieres que te recomiende algo de su menú?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "11:00",
+        "20:00"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g09",
@@ -400,8 +465,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 6,
-      "recuperacion_ms": 5,
+      "latencia_ms": 12,
+      "recuperacion_ms": 8,
       "fuentes": [
         {
           "id": "4ecc760b-0824-4e0f-a6a7-b673c6250602",
@@ -422,7 +487,14 @@
       ],
       "respuesta": "Su horario es de 11:00 a 22:00. ¿Quieres que te recomiende algo de su menú?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "11:00",
+        "22:00"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g10",
@@ -432,8 +504,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 5,
-      "recuperacion_ms": 3,
+      "latencia_ms": 11,
+      "recuperacion_ms": 7,
       "fuentes": [
         {
           "id": "2fa06ab7-e066-4333-80b0-d332399ea52c",
@@ -456,7 +528,13 @@
       ],
       "respuesta": "Capuchino cuesta 7.500 COP. Es del restaurante Café Bolívar. ¿Quieres que busque otra opción?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "7.500"
+      ],
+      "palabras_clave_requeridas": 1,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g11",
@@ -466,8 +544,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 61,
-      "recuperacion_ms": 60,
+      "latencia_ms": 375,
+      "recuperacion_ms": 371,
       "fuentes": [
         {
           "id": "a7484258-c375-4b56-9120-4c63917213db",
@@ -538,7 +616,18 @@
       ],
       "respuesta": "Estas opciones vegetarianas: Patacones de Asadero Los Arcos por 8.000 COP [P1]. Obleas con arequipe de Café Bolívar por 6.000 COP [P2]. Patacones con hogao de Fritanga El Fogón por 9.000 COP [P3]. Mazamorra payanesa de Sabor Payanés por 9.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "patacones",
+        "obleas",
+        "mazamorra",
+        "pizza",
+        "torta",
+        "capuchino"
+      ],
+      "palabras_clave_requeridas": 6,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g12",
@@ -548,8 +637,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 49,
-      "recuperacion_ms": 47,
+      "latencia_ms": 112,
+      "recuperacion_ms": 106,
       "fuentes": [
         {
           "id": "a7484258-c375-4b56-9120-4c63917213db",
@@ -618,7 +707,14 @@
       ],
       "respuesta": "Estas opciones vegetarianas y veganas: Patacones de Asadero Los Arcos por 8.000 COP [P1]. Salpicón de frutas de Fritanga El Fogón por 10.000 COP [P2]. Patacones con hogao de Fritanga El Fogón por 9.000 COP [P3]. Café de la finca de Café Bolívar por 5.500 COP [P4]. ¿Quieres que te cuente más de alguna?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "patacones",
+        "salpicon"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g13",
@@ -628,8 +724,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 98,
-      "recuperacion_ms": 96,
+      "latencia_ms": 194,
+      "recuperacion_ms": 191,
       "fuentes": [
         {
           "id": "bb734855-eadd-40af-9381-5dc723422bd3",
@@ -700,7 +796,17 @@
       ],
       "respuesta": "Estas opciones vegetarianas y por menos de 25.000 COP: Obleas con arequipe de Café Bolívar por 6.000 COP [P1]. Envueltos de choclo de Sabor Payanés por 8.000 COP [P2]. Patacones con hogao de Fritanga El Fogón por 9.000 COP [P3]. Patacones de Asadero Los Arcos por 8.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "obleas",
+        "envueltos",
+        "patacones",
+        "torta",
+        "capuchino"
+      ],
+      "palabras_clave_requeridas": 5,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g14",
@@ -710,8 +816,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 60,
-      "recuperacion_ms": 58,
+      "latencia_ms": 149,
+      "recuperacion_ms": 145,
       "fuentes": [
         {
           "id": "a992c6be-d35f-4d8f-ad77-ff295631b15f",
@@ -788,7 +894,17 @@
       ],
       "respuesta": "Estas opciones: Brownie con helado de Café Bolívar por 12.000 COP [P1]. Envueltos de choclo de Sabor Payanés por 8.000 COP [P2]. Waffle con frutos rojos de Café Bolívar por 14.000 COP [P3]. Torta de fresa de Donde Lian por 10.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Brownie con helado: gluten, huevo, lactosa; Waffle con frutos rojos: gluten, huevo, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "torta",
+        "obleas",
+        "envueltos",
+        "mazamorra",
+        "salpicon"
+      ],
+      "palabras_clave_requeridas": 5,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g15",
@@ -798,8 +914,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 70,
-      "recuperacion_ms": 69,
+      "latencia_ms": 152,
+      "recuperacion_ms": 145,
       "fuentes": [
         {
           "id": "5567a2de-6e34-41b0-98b7-5cb00074f610",
@@ -870,7 +986,15 @@
       ],
       "respuesta": "Estas opciones: Salpicón de frutas de Fritanga El Fogón por 10.000 COP [P1]. Capuchino de Café Bolívar por 7.500 COP [P2]. Café de la finca de Café Bolívar por 5.500 COP [P3]. Mazamorra  de Donde Lian por 6.900 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Capuchino: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "capuchino",
+        "cafe",
+        "salpicon"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g16",
@@ -880,8 +1004,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 75,
-      "recuperacion_ms": 74,
+      "latencia_ms": 181,
+      "recuperacion_ms": 176,
       "fuentes": [
         {
           "id": "1eec978e-cc58-4ffa-873d-7517b4817339",
@@ -902,7 +1026,16 @@
       ],
       "respuesta": "Estas opciones por menos de 10.000 COP: Mazamorra  de Donde Lian por 6.900 COP [P1]. ¿Quieres que te cuente más de alguna?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "capuchino",
+        "torta",
+        "mazamorra",
+        "obleas"
+      ],
+      "palabras_clave_requeridas": 4,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g17",
@@ -912,8 +1045,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 62,
-      "recuperacion_ms": 60,
+      "latencia_ms": 144,
+      "recuperacion_ms": 139,
       "fuentes": [
         {
           "id": "d8324a06-f4b2-4d96-888e-9a9ff0c42761",
@@ -984,7 +1117,15 @@
       ],
       "respuesta": "Estas opciones sin lactosa: Espagueti con albóndiga de Pizzería Centenario por 28.000 COP [P1]. Envueltos de choclo de Donde Lian por 16.000 COP [P2]. Salpicón de frutas de Fritanga El Fogón por 10.000 COP [P3]. Envueltos de choclo de Sabor Payanés por 8.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Espagueti con albóndiga: gluten. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "cafe",
+        "patacones",
+        "salpicon"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g18",
@@ -994,8 +1135,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 70,
-      "recuperacion_ms": 68,
+      "latencia_ms": 153,
+      "recuperacion_ms": 149,
       "fuentes": [
         {
           "id": "bb734855-eadd-40af-9381-5dc723422bd3",
@@ -1071,7 +1212,15 @@
       ],
       "respuesta": "Estas opciones vegetarianas: Obleas con arequipe de Café Bolívar por 6.000 COP [P1]. Patacones de Asadero Los Arcos por 8.000 COP [P2]. Arepa de choclo de Fritanga El Fogón por 7.000 COP [P3]. Pizza margarita de Pizzería Centenario por 28.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa; Arepa de choclo: lactosa; Pizza margarita: gluten, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "vegetariano",
+        "pizza",
+        "torta"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g19",
@@ -1081,8 +1230,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 77,
-      "recuperacion_ms": 75,
+      "latencia_ms": 150,
+      "recuperacion_ms": 146,
       "fuentes": [
         {
           "id": "493abb34-b064-4632-8a72-7c950d6b9914",
@@ -1121,7 +1270,15 @@
       ],
       "respuesta": "Estas opciones: Café de la finca de Café Bolívar por 5.500 COP [P1]. Capuchino de Café Bolívar por 7.500 COP [P2]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Capuchino: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "capuchino",
+        "torta",
+        "cafe"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g20",
@@ -1131,8 +1288,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2332,
-      "recuperacion_ms": 76,
+      "latencia_ms": 26340,
+      "recuperacion_ms": 181,
       "fuentes": [
         {
           "id": "abb3d773-3f8c-47b1-94b1-11ccba7ec775",
@@ -1238,9 +1395,15 @@
           ]
         }
       ],
-      "respuesta": "¡Hola! Para compartir, te recomiendo la Parrillada para dos [P1] de Asadero Los Arcos por 62000 COP. Es una excelente opción vegetariana y con sabores variados. ¿Te apetece probar algo más?\n\nAlérgenos declarados en el catálogo: Pizza margarita: gluten, lactosa; Obleas con arequipe: lactosa; Arepa de choclo: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "¡Hola! Para compartir, te recomiendo la Parrillada para dos [P1] de Asadero Los Arcos por 62000 COP. Es una deliciosa selección de cortes y guarniciones. ¿Te apetece algo más?\n\nAlérgenos declarados en el catálogo: Pizza margarita: gluten, lactosa; Obleas con arequipe: lactosa; Arepa de choclo: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "pizza"
+      ],
+      "palabras_clave_requeridas": 1,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g21",
@@ -1250,8 +1413,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 3822,
-      "recuperacion_ms": 69,
+      "latencia_ms": 24065,
+      "recuperacion_ms": 541,
       "fuentes": [
         {
           "id": "4aac8af2-497f-4f42-98b7-1069f151fe51",
@@ -1338,9 +1501,13 @@
           "alergenos": []
         }
       ],
-      "respuesta": "TukiTuki es una ciudad con muchos platillos deliciosos. ¿Te gustaría algo para compartir? Puedo recomendarte la Picada de carnes [P5] en Asadero Los Arcos por 45000 COP, o el Hamburguesa de la casa [P3] en Fritanga El Fogón por 18000 COP. Ambos son opciones muy populares y seguro para compartir con amigos. ¿Qué te parece?\n\nAlérgenos declarados en el catálogo: Waffle con frutos rojos: gluten, huevo, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "Te recomiendo la Torta de fresa [P4] de Donde Lian por 10000 COP; es una delicia que te transportará a un mundo de placer gastronómico. Sin alérgenos declarados. ¿Prefieres algo más?\n\nAlérgenos declarados en el catálogo: Waffle con frutos rojos: gluten, huevo, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g22",
@@ -1350,8 +1517,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 8384,
-      "recuperacion_ms": 73,
+      "latencia_ms": 26686,
+      "recuperacion_ms": 435,
       "fuentes": [
         {
           "id": "5567a2de-6e34-41b0-98b7-5cb00074f610",
@@ -1422,9 +1589,13 @@
           "alergenos": []
         }
       ],
-      "respuesta": "TukiTuki te recomiendo la Salpicón de frutas [P1] de Fritanga El Fogón por 10000 COP; es una opción vegetariana y vegana perfecta para disfrutar con amigos o familiares. Si quieres algo más ligero, el Sancocho de gallina [P2] también está disponible en Sabor Payanés, un plato auténtico que te traerá la deliciosa experiencia culinaria popayanesa. ¿Prefieres algo para almorzar o para compartir?\n\nAlérgenos declarados en el catálogo: Waffle con frutos rojos: gluten, huevo, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "¡Por supuesto! Aquí tienes tres opciones para almorzar o compartir: - La Ensalada césar [P2] es una opción vegetariana y deliciosa. - El Tamal Huilense [P4] te transportará a una experiencia gastronómica única, con un precio de 8000 COP. - La Waffle con frutos rojos [P3] es perfecto para aquellos que prefieren algo dulce. ¿Qué opción te gustaría probar?\n\nAlérgenos declarados en el catálogo: Waffle con frutos rojos: gluten, huevo, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g23",
@@ -1434,8 +1605,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 3776,
-      "recuperacion_ms": 156,
+      "latencia_ms": 25647,
+      "recuperacion_ms": 569,
       "fuentes": [
         {
           "id": "bb5c7a74-b618-410e-be20-2743a45dc94b",
@@ -1539,9 +1710,13 @@
           ]
         }
       ],
-      "respuesta": "¡Hola! Para recomendarte un buen plato de TukiTuki, te sugiero la Sopa de Maíz [P4] de Fritanga El Fogón en Popayán. Es una opción vegetariana y muy reconfortante. ¡Disfruta del sabor tradicional de Bogotá! ¿Necesitas más sugerencias o algo diferente?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa; Lasagna boloñesa: gluten, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "¡Hola! Para recomendarte algo del catálogo, te sugiero la Sopa de Maíz [P4] de Fritanga El Fogón por 16000 COP. Es una opción vegetariana y muy reconfortante. ¿Te apetece probarla?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa; Lasagna boloñesa: gluten, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g24",
@@ -1551,8 +1726,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 9824,
-      "recuperacion_ms": 137,
+      "latencia_ms": 32800,
+      "recuperacion_ms": 1074,
       "fuentes": [
         {
           "id": "601e6660-33fb-4c57-96f8-fa4d2a9cb56b",
@@ -1653,9 +1828,13 @@
           ]
         }
       ],
-      "respuesta": "Te recomiendo la Mojarra frita [P2] de Fritanga El Fogón por 26000 COP; es una buena opción vegetariana. Si quieres algo más liviano, la Pastas carbonara [P4] también está disponible. ¿Prefieres algo para almorzar o para compartir?\n\nAlérgenos declarados en el catálogo: Espagueti con albóndiga: gluten. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "Te recomiendo la Mojarra frita [P2] de Fritanga El Fogón por 26000 COP; es una opción sencilla pero deliciosa. ¿Quieres algo más para compartir o quieres probar un plato diferente?\n\nAlérgenos declarados en el catálogo: Espagueti con albóndiga: gluten. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g25",
@@ -1665,8 +1844,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 5697,
-      "recuperacion_ms": 140,
+      "latencia_ms": 39148,
+      "recuperacion_ms": 607,
       "fuentes": [
         {
           "id": "00f1e4bb-ced9-4a03-8acc-b54aae54abce",
@@ -1765,9 +1944,13 @@
           "alergenos": []
         }
       ],
-      "respuesta": "Don Leo es una opción vegetariana y casera que te dejará disfrutar del aroma del asado y la calidez del hogar. Hamburguesa de la casa es una buena elección si prefieres algo más rápido pero con sabores tradicionales. Café Bolívar ofrece un café tinto de fincas caucanas y tortas horneadas en el día, perfecto para compartir. Patacones son una opción vegetariana que te dejará disfrutar del plátano verde prensado frito.",
+      "respuesta": "Don Leo, elegancia en cada bocado. Sabores tradicionales, carnes jugosas y acompañamientos caseros que invitan a quedarse y disfrutar.\n\nHamburguesa de la casa, ¡es una opción perfecta para compartir! Dos carnes de res, queso, lechuga, tomate y papas. Sin alérgenos declarados.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g26",
@@ -1777,8 +1960,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 3296,
-      "recuperacion_ms": 139,
+      "latencia_ms": 32697,
+      "recuperacion_ms": 604,
       "fuentes": [
         {
           "id": "63d9f9bc-e446-4b1a-9101-8d3d5d0e977d",
@@ -1884,9 +2067,13 @@
           "alergenos": []
         }
       ],
-      "respuesta": "Te recomiendo la Chuleta a la brasa [P1] de Asadero Los Arcos por 34000 COP; es una buena opción vegetariana. Si quieres algo más liviano, la Salpicón de frutas [P2] también está disponible. ¿Prefieres algo para compartir?\n\nAlérgenos declarados en el catálogo: Torta de fresa: gluten, huevo, lactosa; Lasagna de la casa: gluten, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "Te recomiendo la Chuleta a la brasa [P1] del Asadero Los Arcos por 34000 COP; es una buena opción vegetariana. Si quieres algo más liviano, la Salpicón de frutas [P2] también está disponible. ¿Prefieres algo para compartir?\n\nAlérgenos declarados en el catálogo: Torta de fresa: gluten, huevo, lactosa; Lasagna de la casa: gluten, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g27",
@@ -1896,8 +2083,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 10354,
-      "recuperacion_ms": 101,
+      "latencia_ms": 37830,
+      "recuperacion_ms": 573,
       "fuentes": [
         {
           "id": "bb734855-eadd-40af-9381-5dc723422bd3",
@@ -2000,9 +2187,13 @@
           "alergenos": []
         }
       ],
-      "respuesta": "¡Hola! Aquí tienes algunas opciones para cenar en Popayán: - La Oblea con Arequipe [P1] es una opción vegetariana y deliciosa. - Donde Lian ofrece un ambiente acogedor y sabores exclusivos, perfecto para compartir. - Los Envueltos de Choclo [P3] son dulces que te traerán a la nostalgia de tu infancia. ¿Qué prefieres?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa; Arepa de choclo: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "¡Hola! Aquí tienes algunas opciones para cenar en Popayán: - La Oblea con Arequipe [P1] es una opción vegetariana y muy sabrosa. - Donde Lian ofrece un ambiente acogedor y auténticos sabores chinos fusionados. - Los Envueltos de Chocolet [P3] son dulces tiernos que te harán querer más. ¿Te apetece algo más?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa; Arepa de choclo: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g28",
@@ -2012,8 +2203,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 88,
-      "recuperacion_ms": 86,
+      "latencia_ms": 579,
+      "recuperacion_ms": 572,
       "fuentes": [
         {
           "id": "c41493a2-c2ef-477f-b526-587221866769",
@@ -2090,7 +2281,17 @@
       ],
       "respuesta": "Estas opciones: Torta de fresa de Donde Lian por 10.000 COP [P1]. Brownie con helado de Café Bolívar por 12.000 COP [P2]. Envueltos de choclo de Sabor Payanés por 8.000 COP [P3]. Cheesecake de mora de Café Bolívar por 11.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Brownie con helado: gluten, huevo, lactosa; Cheesecake de mora: gluten, huevo, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "torta",
+        "obleas",
+        "envueltos",
+        "mazamorra",
+        "salpicon"
+      ],
+      "palabras_clave_requeridas": 5,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g29",
@@ -2100,8 +2301,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 114,
-      "recuperacion_ms": 112,
+      "latencia_ms": 179,
+      "recuperacion_ms": 173,
       "fuentes": [
         {
           "id": "493abb34-b064-4632-8a72-7c950d6b9914",
@@ -2172,7 +2373,15 @@
       ],
       "respuesta": "Estas opciones: Café de la finca de Café Bolívar por 5.500 COP [P1]. Mazamorra  de Donde Lian por 6.900 COP [P2]. Capuchino de Café Bolívar por 7.500 COP [P3]. Envueltos de choclo de Sabor Payanés por 8.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Capuchino: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "cafe",
+        "torta",
+        "capuchino"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g30",
@@ -2182,8 +2391,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 60,
-      "recuperacion_ms": 58,
+      "latencia_ms": 151,
+      "recuperacion_ms": 146,
       "fuentes": [
         {
           "id": "5567a2de-6e34-41b0-98b7-5cb00074f610",
@@ -2254,7 +2463,15 @@
       ],
       "respuesta": "Estas opciones: Salpicón de frutas de Fritanga El Fogón por 10.000 COP [P1]. Capuchino de Café Bolívar por 7.500 COP [P2]. Café de la finca de Café Bolívar por 5.500 COP [P3]. Torta de fresa de Donde Lian por 10.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Capuchino: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "capuchino",
+        "cafe",
+        "salpicon"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g31",
@@ -2264,8 +2481,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 72,
-      "recuperacion_ms": 70,
+      "latencia_ms": 701,
+      "recuperacion_ms": 531,
       "fuentes": [
         {
           "id": "a7484258-c375-4b56-9120-4c63917213db",
@@ -2338,7 +2555,13 @@
       ],
       "respuesta": "Estas opciones vegetarianas: Patacones de Asadero Los Arcos por 8.000 COP [P1]. Obleas con arequipe de Café Bolívar por 6.000 COP [P2]. Arepa de choclo de Fritanga El Fogón por 7.000 COP [P3]. Envueltos de choclo de Sabor Payanés por 8.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa; Arepa de choclo: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "COP"
+      ],
+      "palabras_clave_requeridas": 1,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g32",
@@ -2348,8 +2571,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 7773,
-      "recuperacion_ms": 96,
+      "latencia_ms": 27520,
+      "recuperacion_ms": 215,
       "fuentes": [
         {
           "id": "601e6660-33fb-4c57-96f8-fa4d2a9cb56b",
@@ -2451,9 +2674,13 @@
           "alergenos": []
         }
       ],
-      "respuesta": "Sabor Payanés [P1] es una buena opción vegetariana. La Sopa de maíz [P2] también está disponible y es perfecta para almorzar. ¿Te gustaría algo más?\n\nAlérgenos declarados en el catálogo: Lasagna boloñesa: gluten, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "Sabor Payanés [P1] es una opción vegetariana que te dejará con la boca agua. La Sopa de maíz [P2] también está disponible y tiene un precio atractivo. ¿Prefieres algo más para compartir?\n\nAlérgenos declarados en el catálogo: Lasagna boloñesa: gluten, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g33",
@@ -2463,8 +2690,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 79,
-      "recuperacion_ms": 77,
+      "latencia_ms": 38585,
+      "recuperacion_ms": 38532,
       "fuentes": [
         {
           "id": "5567a2de-6e34-41b0-98b7-5cb00074f610",
@@ -2501,7 +2728,15 @@
       ],
       "respuesta": "Estas opciones vegetarianas y veganas: Salpicón de frutas de Fritanga El Fogón por 10.000 COP [P1]. Café de la finca de Café Bolívar por 5.500 COP [P2]. ¿Quieres que te cuente más de alguna?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "patacones",
+        "salpicon",
+        "cafe"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g34",
@@ -2511,8 +2746,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 138,
-      "recuperacion_ms": 135,
+      "latencia_ms": 256,
+      "recuperacion_ms": 237,
       "fuentes": [
         {
           "id": "e1a7102b-9f3a-401f-b228-de7f521d5260",
@@ -2583,7 +2818,17 @@
       ],
       "respuesta": "Estas opciones por menos de 25.000 COP: Morcilla de Donde Lian por 9.000 COP [P1]. Hamburguesa de la casa de Fritanga El Fogón por 18.000 COP [P2]. Obleas con arequipe de Café Bolívar por 6.000 COP [P3]. Arepa rellena de Sabor Payanés por 10.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "hamburguesa",
+        "morcilla",
+        "arepa",
+        "obleas",
+        "pizza"
+      ],
+      "palabras_clave_requeridas": 5,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g35",
@@ -2593,12 +2838,16 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2,
+      "latencia_ms": 5,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g36",
@@ -2608,12 +2857,16 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2,
+      "latencia_ms": 4,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g37",
@@ -2623,12 +2876,16 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2,
+      "latencia_ms": 5,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g38",
@@ -2638,12 +2895,16 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2,
+      "latencia_ms": 4,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g39",
@@ -2653,12 +2914,16 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2,
+      "latencia_ms": 3,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g40",
@@ -2668,12 +2933,16 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2,
+      "latencia_ms": 4,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g41",
@@ -2683,12 +2952,16 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2,
+      "latencia_ms": 9,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g42",
@@ -2698,12 +2971,16 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2,
+      "latencia_ms": 4,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g43",
@@ -2713,12 +2990,19 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 6,
+      "latencia_ms": 12,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "No encontré opciones de sushi en el catálogo de TukiTuki. ¿Quieres que busque otra cocina o un plato en especial?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "sushi",
+        "no"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g44",
@@ -2728,12 +3012,19 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 8,
+      "latencia_ms": 14,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "No encontré opciones de china en el catálogo de TukiTuki. ¿Quieres que busque otra cocina o un plato en especial?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "china",
+        "no"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g45",
@@ -2743,12 +3034,19 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 8,
+      "latencia_ms": 13,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "No encontré opciones de infantil en el catálogo de TukiTuki. ¿Quieres que busque otra cocina o un plato en especial?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "infantil",
+        "no"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g46",
@@ -2758,12 +3056,19 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 2,
+      "latencia_ms": 4,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "parqueadero",
+        "no"
+      ],
+      "palabras_clave_requeridas": 2,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     },
     {
       "id": "g47",
@@ -2773,8 +3078,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 103,
-      "recuperacion_ms": 100,
+      "latencia_ms": 282,
+      "recuperacion_ms": 274,
       "fuentes": [
         {
           "id": "bb5c7a74-b618-410e-be20-2743a45dc94b",
@@ -2847,7 +3152,15 @@
       ],
       "respuesta": "Estas opciones sin gluten: Ajiaco Bogotano de Donde Lian por 17.000 COP [P1]. Obleas con arequipe de Café Bolívar por 6.000 COP [P2]. Arepa de choclo de Fritanga El Fogón por 7.000 COP [P3]. Chuleta a la brasa de Asadero Los Arcos por 34.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa; Arepa de choclo: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "gluten",
+        "alergeno",
+        "restaurante"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g48",
@@ -2857,8 +3170,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 8481,
-      "recuperacion_ms": 91,
+      "latencia_ms": 38424,
+      "recuperacion_ms": 188,
       "fuentes": [
         {
           "id": "bb5c7a74-b618-410e-be20-2743a45dc94b",
@@ -2962,9 +3275,13 @@
           "alergenos": []
         }
       ],
-      "respuesta": "¡Por supuesto! Aquí tienes 10 opciones para ti: [P1] Ajiaco Bogotano: Sabor tradicional y reconfortante, perfecto para una comida rápida. [P2] Chuleta a la brasa: Crujiente y deliciosa, ideal para compartir con amigos. [P3] Caldo de res: Cocido sencillo pero muy sabroso, sin alérgenos declarados. [P4] Lasagna boloñesa: Receta clásica con parmesano, perfecta para una cena romántica. [P5] Obleas con arequipe: Crujientes y deliciosos, ideal para un postre o antojo. [P6] Arepa rellena: Asada de carne desmechada, un toque auténtico de Popayán. [P7] Ajiaco Bogotano: Sabor tradicional y reconfortante, perfect\n\nAlérgenos declarados en el catálogo: Lasagna boloñesa: gluten, lactosa; Obleas con arequipe: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "¡Hola! Aquí tienes algunas opciones para ti: [P1] Ajiaco Bogotano: La esencia de la capital del país en tu plato. ¡Pollo, papas, maíz y guasca, acompañado de alcaparras y crema, aromático y reconfortante. [P2] Chuleta a la brasa: Chuleta de cerdo con sal gruesa y leña de eucalipto. [P3] Caldo de res: Cocido con papa, zanahoria, mazorca, yuca y cilantro. [P4] Lasagna boloñesa: Receta clásica de la Bolañosa, con parmesano. [P5] Obleas con arequipe: Crujientes con arequipe y queso rallado. [P6] Arepa rellena: Asada con carne desmechada y queso campesino. ¡\n\nAlérgenos declarados en el catálogo: Lasagna boloñesa: gluten, lactosa; Obleas con arequipe: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g49",
@@ -2974,8 +3291,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 13539,
-      "recuperacion_ms": 195,
+      "latencia_ms": 48312,
+      "recuperacion_ms": 670,
       "fuentes": [
         {
           "id": "bb734855-eadd-40af-9381-5dc723422bd3",
@@ -3076,9 +3393,15 @@
           "alergenos": []
         }
       ],
-      "respuesta": "¡Por supuesto! Aquí tienes la información sobre todos los platos: - Obleas con arequipe [P1]: 6000 COP - Don Leo [P2]: 3434338343 (Horario: de 09:00 a 22:00) - Mojarra frita [P3]: 19900 COP - Morcilla [P4]: 12000 COP - Fritanga El Fogón [P5]: 11:00 a 21:00 - Envueltos de choclo [P6]: 8000 COP ¿Necesitas más información sobre alguno de estos platos?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
+      "respuesta": "¡Por supuesto! Aquí tienes la información sobre todos los platos disponibles: - Obleas con arequipe [P1]: 6000 COP. - Don Leo [P2]: 3434338343 (Teléfono: +57 300 000 0005). - Mojarra frita [P3]: 19900 COP. - Morcilla [P4]: 12000 COP. - Fritanga El Fogón [P5]: 11:00 a 21:00 (Horario: de 11:00 a 21:00). - Envueltos de choclo [P6]: 8000 COP. ¿Necesitas más información sobre alguno de estos platos?\n\nAlérgenos declarados en el catálogo: Obleas con arequipe: lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "COP"
+      ],
+      "palabras_clave_requeridas": 1,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g50",
@@ -3088,8 +3411,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 12,
-      "recuperacion_ms": 8,
+      "latencia_ms": 16,
+      "recuperacion_ms": 10,
       "fuentes": [
         {
           "id": "c18b9564-01c0-4f16-bd1f-8fc25a8d817b",
@@ -3113,7 +3436,15 @@
       ],
       "respuesta": "Pizza margarita tiene estos alérgenos declarados: gluten, lactosa. Es del restaurante Pizzería Centenario. ¿Quieres que busque otra opción?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "gluten",
+        "restaurante",
+        "alergeno"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g51",
@@ -3123,8 +3454,8 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 341,
-      "recuperacion_ms": 337,
+      "latencia_ms": 580,
+      "recuperacion_ms": 573,
       "fuentes": [
         {
           "id": "c41493a2-c2ef-477f-b526-587221866769",
@@ -3201,7 +3532,15 @@
       ],
       "respuesta": "Estas opciones: Torta de fresa de Donde Lian por 10.000 COP [P1]. Torta de chocolate de Café Bolívar por 9.500 COP [P2]. Torta de fresa de Café Bolívar por 9.000 COP [P3]. Envueltos de choclo de Sabor Payanés por 8.000 COP [P4]. ¿Quieres que te cuente más de alguna?\n\nAlérgenos declarados en el catálogo: Torta de chocolate: gluten, huevo, lactosa; Torta de fresa: gluten, huevo, lactosa. Si tienes una alergia, confirma con el restaurante antes de pedir.",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [
+        "restaurante",
+        "alergia",
+        "confirmar"
+      ],
+      "palabras_clave_requeridas": 3,
+      "fuentes_requeridas": 1,
+      "debe_abstenerse": false
     },
     {
       "id": "g52",
@@ -3211,12 +3550,16 @@
       "claves_ok": true,
       "fuentes_ok": true,
       "abstencion_ok": true,
-      "latencia_ms": 1,
+      "latencia_ms": 5,
       "recuperacion_ms": 0,
       "fuentes": [],
       "respuesta": "Puedo ayudarte a elegir platos y restaurantes de TukiTuki, pero ese tema no lo manejo. ¿Buscas algo en especial para comer?",
       "modelo": "tuki-chef",
-      "error": null
+      "error": null,
+      "palabras_clave_esperadas": [],
+      "palabras_clave_requeridas": 0,
+      "fuentes_requeridas": 0,
+      "debe_abstenerse": true
     }
   ]
 }

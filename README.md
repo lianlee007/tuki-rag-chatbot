@@ -115,7 +115,14 @@ El Golden Dataset tiene **52 casos**:
 python evaluacion/evaluate_rag.py
 ```
 
-La última ejecución completa dio:
+Incluye consultas de platos, filtros, preguntas genéricas y seguimientos, además
+de casos fuera de alcance, de seguridad, sin datos y de políticas. El éxito de
+cada caso se valida con palabras clave esperadas, cantidad mínima de fuentes y,
+cuando corresponde, una regla de abstención. El evaluador también mide
+latencia media, p50 y p95; opcionalmente puede pedir a Ollama una nota de juez
+de 1 a 5 con `--juez`.
+
+La ejecución completa del 20 de noviembre de 2026 dio:
 
 | Métrica | Valor |
 |---|---:|
@@ -123,13 +130,18 @@ La última ejecución completa dio:
 | Éxitos | 52 |
 | Tasa de éxito | **100 %** |
 | Error | 0 % |
-| Latencia media | 1.701 ms |
-| Latencia p50 | 62 ms |
-| Latencia p95 | 9.113 ms |
+| Palabras clave esperadas (casos que las definen) | 34/34 |
+| Fuentes mínimas requeridas | 39/39 |
+| Abstenciones requeridas | 13/13 |
+| Latencia media | 8.237 ms |
+| Latencia p50 | 151 ms |
+| Latencia p95 | 38.424 ms |
 
-En esta corrida los 52 casos pasaron. La mejora clave fue filtrar por categoría
-cuando la pregunta pide un postre o algo para tomar; antes el modelo recomendaba
-una pizza para beber.
+El resultado supera el objetivo mínimo de eficiencia del 70 %. Esta es una
+medición sobre los 52 casos definidos, no una garantía de que toda pregunta
+posible vaya a tener una respuesta correcta. El juez no se usó en esta corrida;
+la evaluación fue por reglas y palabras clave. Cada caso, sus palabras clave
+esperadas y sus métricas se guardan en JSON y CSV.
 
 Los resultados están en [`evaluacion/resultados`](evaluacion/resultados) y el
 resumen visual en `docs/capturas/evaluacion.jpeg`.

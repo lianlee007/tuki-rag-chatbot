@@ -31,10 +31,11 @@ services:
     volumes:
       - ./Modelfile:/Modelfile:ro
     entrypoint: ["/bin/sh", "-c"]
-    command: >
-      ollama pull qwen2.5:1.5b-instruct &&
-      ollama pull nomic-embed-text &&
-      ollama create tuki-chef -f /Modelfile
+    command:
+      - >-
+        ollama pull qwen2.5:1.5b-instruct &&
+        ollama pull nomic-embed-text &&
+        ollama create tuki-chef -f /Modelfile
     restart: "no"
 
   rag-api:
