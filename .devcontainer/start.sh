@@ -25,6 +25,7 @@ fi
 pkill -f "uvicorn app.main:app" 2>/dev/null || true
 
 OLLAMA_URL=http://127.0.0.1:11434 \
+OLLAMA_KEEP_ALIVE=-1 \
 CATALOGO_PATH=datos/catalogo.json \
 OLLAMA_MODELO_CHAT=tuki-chef \
 OLLAMA_MODELO_EMBEDDINGS=nomic-embed-text \
