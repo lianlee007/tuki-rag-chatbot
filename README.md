@@ -182,8 +182,8 @@ docs/             informe en PDF/DOCX y capturas
 
 El documento de la actividad está en:
 
-- `docs/Informe-modelo-rag-TukiTuki.pdf`
-- `docs/Informe-modelo-rag-TukiTuki.docx`
+- [`docs/Informe-modelo-rag-TukiTuki.pdf`](docs/Informe-modelo-rag-TukiTuki.pdf) (recomendado)
+- [`docs/Informe-modelo-rag-TukiTuki.docx`](docs/Informe-modelo-rag-TukiTuki.docx)
 
 ## Aportes del equipo
 
