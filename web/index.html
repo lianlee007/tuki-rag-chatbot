@@ -194,12 +194,16 @@
       .intro { padding: 4px; }
       .chat { min-height: 520px; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      .messages { scroll-behavior: auto; }
+      .chip, input, button.send { transition: none; }
+    }
   </style>
 </head>
 <body>
   <main class="app">
     <section class="intro">
-      <div class="brand"><span>🍳</span> TukiTuki</div>
+      <div class="brand"><span aria-hidden="true">🍳</span> TukiTuki</div>
       <h1>¿Qué se te antoja hoy?</h1>
       <p class="lead">
         Pregúntale a Tuki por un plato. Busca en el catálogo real de restaurantes
@@ -215,7 +219,7 @@
 
     <section class="chat" aria-label="Chat de recomendaciones">
       <header class="chat-header">
-        <div class="avatar">🍽️</div>
+        <div class="avatar" aria-hidden="true">🍽️</div>
         <div>
           <strong>Tuki, tu recomendador</strong>
           <small>Catálogo real de TukiTuki</small>
@@ -226,8 +230,8 @@
       </div>
       <div class="loading" id="loading" hidden>Buscando en el catálogo…</div>
       <form id="form">
-        <input id="input" maxlength="500" placeholder="Ej. algo vegetariano para almorzar" autocomplete="off" />
-        <button class="send" id="send" type="submit" aria-label="Enviar" disabled>➤</button>
+        <input id="input" maxlength="500" placeholder="Ej. algo vegetariano para almorzar" autocomplete="off" enterkeyhint="send" autocapitalize="sentences" />
+        <button class="send" id="send" type="submit" aria-label="Enviar" disabled><span aria-hidden="true">➤</span></button>
       </form>
     </section>
   </main>
