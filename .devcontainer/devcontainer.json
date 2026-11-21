@@ -1,15 +1,13 @@
 {
   "name": "Tuki RAG Chatbot",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-  },
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
   "hostRequirements": {
     "cpus": 2,
     "memory": "8gb",
     "storage": "32gb"
   },
-  "postStartCommand": "bash -lc 'for i in $(seq 1 45); do docker info >/dev/null 2>&1 && break; sleep 2; done; docker compose up -d --build'",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postStartCommand": "bash .devcontainer/start.sh",
   "portsAttributes": {
     "8000": {
       "label": "Tuki RAG API",
